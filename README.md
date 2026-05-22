@@ -1,5 +1,7 @@
 # Antigravity CLI tips
 
+Work in progress.
+
 ## Tip 0: Set up a terminal alias for quick access
 
 To help you launch Antigravity CLI quickly, you can alias `agy` to just `a`.
