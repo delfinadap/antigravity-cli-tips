@@ -1,6 +1,6 @@
 # Project instructions
 
-This file is `AGENTS.md` (Antigravity CLI's equivalent of `CLAUDE.md`). `CLAUDE.md` is symlinked to this file.
+This file is `AGENTS.md`. `CLAUDE.md` is symlinked to this file.
 
 - Writing: keep user's voice, conversational, stick closely to what user said without making things up, but fix small grammar mistakes
 
