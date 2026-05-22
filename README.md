@@ -10,7 +10,17 @@ To set this up, add this line to your shell config file (such as `~/.zshrc` or `
 alias a='agy'
 ```
 
-## Tip 1: Talk to Antigravity CLI with your voice
+## Tip 1: Set up AGENTS.md for project instructions
+
+`AGENTS.md` is a file you place in your project root to give Antigravity CLI persistent instructions. Anything you write in it gets included in every prompt within that directory. It's great for things like coding conventions, project-specific rules, or how you want the agent to behave.
+
+If you also use Claude Code, you can symlink `CLAUDE.md` to point to the same file so both tools share the same instructions:
+
+```bash
+ln -s AGENTS.md CLAUDE.md
+```
+
+## Tip 2: Talk to Antigravity CLI with your voice
 
 I found that you can communicate much faster with your voice than typing with your hands. Using a voice transcription system on your local machine is really helpful for this.
 
