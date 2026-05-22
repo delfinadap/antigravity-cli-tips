@@ -6,4 +6,4 @@
 
 File issues on `google-antigravity/antigravity-cli` using host `gh` (not through a container).
 
-Before filing, check the user's past submitted issues on the repo to match the style. Use `gh api "repos/google-antigravity/antigravity-cli/issues?creator=ykdojo&state=all"` to review them.
+Use `DX:` prefix for developer experience issues. Before filing, check the user's past submitted issues on the repo to match the style. Use `gh api "repos/google-antigravity/antigravity-cli/issues?creator=ykdojo&state=all"` to review them.
