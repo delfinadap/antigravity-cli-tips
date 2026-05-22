@@ -6,6 +6,4 @@
 
 File issues on `google-antigravity/antigravity-cli` using host `gh` (not through a container).
 
-Use `DX:` prefix for developer experience issues (e.g., `DX: Help screen shortcuts view is not scrollable when terminal is too small`).
-
-Keep the body short and to the point - no need for full bug report templates.
+Before filing, check the user's past submitted issues on the repo to match the style. Use `gh api "repos/google-antigravity/antigravity-cli/issues?creator=ykdojo&state=all"` to review them.
