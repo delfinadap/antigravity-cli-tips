@@ -12,7 +12,7 @@ alias a='agy'
 
 ## Tip 1: Set up AGENTS.md for project instructions
 
-`AGENTS.md` is a file you place in your project root to give Antigravity CLI persistent instructions. Anything you write in it gets included in every prompt within that directory. It's great for things like coding conventions, project-specific rules, or how you want the agent to behave.
+`AGENTS.md` is a file you place in your project root to give Antigravity CLI persistent instructions. Anything you write in it gets included in every prompt within that directory. It's great for things like coding conventions, project-specific rules, or how you want the agent to behave in general.
 
 If you also use Claude Code, you can symlink `CLAUDE.md` to point to the same file so both tools share the same instructions:
 
