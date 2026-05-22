@@ -1,5 +1,15 @@
 # Antigravity CLI tips
 
+## Tip 0: Set up a terminal alias for quick access
+
+To help you launch Antigravity CLI quickly, you can alias `agy` to just `a`.
+
+To set this up, add this line to your shell config file (such as `~/.zshrc` or `~/.bashrc`):
+
+```bash
+alias a='agy'
+```
+
 ## Tip 1: Talk to Antigravity CLI with your voice
 
 I found that you can communicate much faster with your voice than typing with your hands. Using a voice transcription system on your local machine is really helpful for this.
