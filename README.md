@@ -12,7 +12,7 @@ To set this up, add this line to your shell config file (such as `~/.zshrc` or `
 alias a='agy'
 ```
 
-## Tip 1: Set up AGENTS.md for project instructions
+## Tip 1: Set up AGENTS.md
 
 `AGENTS.md` is a file you place in your project root to give Antigravity CLI persistent instructions. Anything you write in it gets included in every prompt within that directory. It's great for things like coding conventions, project-specific rules, or how you want the agent to behave in general.
 
