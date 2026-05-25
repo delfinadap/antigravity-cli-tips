@@ -40,3 +40,7 @@ A common objection is "what if you're in a room with other people?" In that case
 ## Tip 3: Mastering different ways of verifying its output
 
 One way to verify its output if it's code is to have it write tests and make sure the tests look good and don't just hardcode true. That's one way, but you can of course check the code it generates as it goes. You can also use a visual Git client like GitHub Desktop for checking changes quickly. And having it generate a PR is a great way as well - have it create a draft PR, check the content before marking it as ready for review.
+
+## Tip 4: Attach images with Ctrl+V
+
+You can attach an image from your clipboard to your prompt by simply pressing Ctrl+V.
