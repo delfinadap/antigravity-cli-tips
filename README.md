@@ -2,7 +2,7 @@
 
 Work in progress.
 
-## Tip 0: Set up a terminal alias for quick access
+## Tip 0: Set up terminal aliases for quick access
 
 To help you launch Antigravity CLI quickly, you can alias `agy` to just `a`.
 
@@ -10,6 +10,13 @@ To set this up, add this line to your shell config file (such as `~/.zshrc` or `
 
 ```bash
 alias a='agy'
+```
+
+I personally like to set up aliases for other tools I use often too, not just Antigravity. For example:
+
+```bash
+alias gb='github'  # GitHub Desktop
+alias co='code'    # VS Code
 ```
 
 ## Tip 1: Set up AGENTS.md
