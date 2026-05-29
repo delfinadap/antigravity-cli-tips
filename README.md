@@ -48,6 +48,10 @@ A common objection is "what if you're in a room with other people?" In that case
 
 One way to verify its output if it's code is to have it write tests and make sure the tests look good and don't just hardcode true. That's one way, but you can of course check the code it generates as it goes. You can also use a visual Git client like GitHub Desktop for checking changes quickly. And having it generate a PR is a great way as well - have it create a draft PR, check the content before marking it as ready for review.
 
-## Tip 4: Attach images with Ctrl+V
+## Tip 4: Learn to use powerful command line tools from the agent
+
+For example, you can create a draft PR through the `gh` command, and once it's created, you can ask the agent to open it in your browser with the `open` command so you can review it yourself. If you have a change you want to check quickly or fix manually, you can use the `code` command to open it in VS Code, or use the `github` command to open GitHub Desktop and see a visual diff. You can use `ffmpeg` for quick video editing, or ImageMagick for quick image editing and conversion. There are a lot of things you can do if you're familiar with these CLI tools.
+
+## Tip 5: Attach images with Ctrl+V
 
 You can attach an image from your clipboard to your prompt by simply pressing Ctrl+V.
