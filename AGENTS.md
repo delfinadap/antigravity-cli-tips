@@ -8,4 +8,4 @@ This file is `AGENTS.md`. `CLAUDE.md` is symlinked to this file.
 
 File issues on `google-antigravity/antigravity-cli` using host `gh` (not through a container).
 
-Use `DX:` prefix for developer experience issues. Before filing, check the user's past submitted issues on the repo to match the style. Use `gh api "repos/google-antigravity/antigravity-cli/issues?creator=ykdojo&state=all"` to review them.
+Use `DX:` prefix for developer experience issues. Before filing, check the user's past submitted issues on the repo to match the style. Checking issues and duplicates are read-only calls on a public repo - use a safeclaw container per the global CLAUDE.md rules. Only use host `gh` for the actual write operation (creating the issue).
