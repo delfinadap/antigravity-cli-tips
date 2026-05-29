@@ -55,3 +55,9 @@ For example, you can create a draft PR through the `gh` command, and once it's c
 ## Tip 5: Attach images with Ctrl+V
 
 You can attach an image from your clipboard to your prompt by simply pressing Ctrl+V.
+
+## Tip 6: Cmd+A and Ctrl+A are your friends
+
+Sometimes you want to give Antigravity CLI a bunch of text from a webpage or terminal output. You can give it a URL, but another method is to just select all (Cmd+A on Mac, Ctrl+A on Windows/Linux), copy, and paste it directly into the CLI.
+
+Some pages don't lend themselves well to select all by default - but there are tricks to get them into a better state first. For example, with Gmail threads, click Print All to get the print preview (but cancel the actual print). For YouTube videos, click "Show transcript" and then Cmd+A or Ctrl+A.
