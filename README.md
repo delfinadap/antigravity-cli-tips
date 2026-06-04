@@ -46,6 +46,10 @@ To set this up:
    }
    ```
 
+The script supports 10 color themes (orange, blue, teal, green, lavender, rose, gold, slate, cyan, or gray). Edit the `COLOR` variable at the top of the script to change it.
+
+![Color preview options](scripts/color-preview.png)
+
 It also adapts to narrow terminals by wrapping at natural breakpoints instead of getting cut off:
 
 ```
@@ -53,10 +57,6 @@ Claude Opus 4.6 (Thinking) | 📁antigravity-cli-tips
  | 🔀main (scripts/context-bar.sh uncommitted, synced 11m ago)
  | ░░░░░░░░░░ 0% of 250k tokens
 ```
-
-The script supports 10 color themes (orange, blue, teal, green, lavender, rose, gold, slate, cyan, or gray). Edit the `COLOR` variable at the top of the script to change it.
-
-![Color preview options](scripts/color-preview.png)
 
 ## Tip 2: Set up AGENTS.md
 
