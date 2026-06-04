@@ -21,7 +21,7 @@ alias co='code'    # VS Code
 
 ## Tip 1: Set up your custom status line
 
-You can customize the status line at the bottom of Antigravity CLI to show useful info (see the [official docs](https://antigravity.google/docs/cli-statusline)). For example, I built [this script](scripts/context-bar.sh) that shows the model, current directory, git branch, dirty status, sync status with origin, and a visual progress bar for token usage:
+You can customize the status line at the bottom of Antigravity CLI to show useful info (see the [official docs](https://antigravity.google/docs/cli-statusline)). For example, I built [this script](scripts/context-bar.sh) that shows the model, current directory, git branch, uncommitted file count, sync status with origin, and a visual progress bar for token usage:
 
 ```
 Claude Opus 4.6 (Thinking) | 📁antigravity-cli-tips | 🔀main (scripts/color-preview.sh uncommitted, synced 14m ago) | █▄░░░░░░░░ 15% of 250k tokens
