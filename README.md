@@ -100,3 +100,24 @@ You can attach an image from your clipboard to your prompt by simply pressing Ct
 Sometimes you want to give Antigravity CLI a bunch of text from a webpage or terminal output. You can give it a URL, but another method is to just select all (Cmd+A on Mac, Ctrl+A on Windows/Linux), copy, and paste it directly into the CLI.
 
 Some pages don't lend themselves well to select all by default - but there are tricks to get them into a better state first. For example, with Gmail threads, click Print All to get the print preview (but cancel the actual print). For YouTube videos, click "Show transcript" and then Cmd+A or Ctrl+A.
+
+## Tip 8: Manage your to-do list in AGENTS.md
+
+It's convenient to keep a to-do list or project status in your `AGENTS.md` file. Since the agent reads it with every prompt, you can just ask "what's on the to-do list?" and it'll know exactly where things stand. You can also ask it to update the list as you make progress.
+
+For example, you might have a section like this in your `AGENTS.md`:
+
+```markdown
+## To-Do
+
+### Done
+- [x] Unity 3D URP project scaffold
+- [x] Card hand UI with 7 cards at bottom of screen
+- [x] Card hover effect (scale + blue outline highlight)
+- [x] Card drag with placeholder in hand
+
+### Up Next
+- [ ] 3D world view - camera at an angled perspective looking down at a game field/board
+```
+
+Then you can just ask "what do we have for the to-do list" and it'll give you a summary of what's done and what's next.
