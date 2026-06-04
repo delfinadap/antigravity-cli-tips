@@ -123,9 +123,36 @@ done
 
 ctx="${bar} ${C_GRAY}${pct}% of ${max_display} tokens"
 
+# Get terminal width from JSON
+term_width=$(echo "$input" | jq -r '.terminal_width // 120')
+
 # Build output: Model | Dir | Branch (status) | Context
 output="${C_ACCENT}${model}${C_GRAY} | 📁${dir}"
 [[ -n "$branch" ]] && output+=" | 🔀${branch} ${git_status}"
 output+=" | ${ctx}${C_RESET}"
 
-printf '%b\n' "$output"
+# Expand ANSI codes, then wrap at terminal width
+expanded=$(printf '%b' "$output")
+col=0
+in_esc=0
+result=""
+for (( i=0; i<${#expanded}; i++ )); do
+    c="${expanded:i:1}"
+    if (( in_esc )); then
+        result+="$c"
+        [[ "$c" == [a-zA-Z] ]] && in_esc=0
+    elif [[ "$c" == $'\033' ]]; then
+        result+="$c"
+        in_esc=1
+    else
+        if (( col >= term_width )); then
+            result+=$'\n'
+            col=0
+        fi
+        result+="$c"
+        (( col++ ))
+        # Emojis are 2 columns wide in the terminal
+        case "$c" in 📁|🔀|💬) (( col++ )) ;; esac
+    fi
+done
+printf '%s\n' "$result"
