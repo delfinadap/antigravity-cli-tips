@@ -48,6 +48,8 @@ To set this up:
 
 The script supports 10 color themes (orange, blue, teal, green, lavender, rose, gold, slate, cyan, or gray). Edit the `COLOR` variable at the top of the script to change it.
 
+![Color preview options](scripts/color-preview.png)
+
 ## Tip 2: Set up AGENTS.md
 
 `AGENTS.md` is a file you place in your project root to give Antigravity CLI persistent instructions. Anything you write in it gets included in every prompt within that directory. It's great for things like coding conventions, project-specific rules, or how you want the agent to behave in general.
