@@ -28,12 +28,17 @@ model=$(echo "$input" | jq -r '.model.display_name // .model.id // "?"')
 cwd=$(echo "$input" | jq -r '.cwd // empty')
 dir=$(basename "$cwd" 2>/dev/null || echo "?")
 
-# Get git branch and dirty status from JSON
+# Get git branch from JSON, fall back to git command
 branch=$(echo "$input" | jq -r '.vcs.branch // empty')
-dirty=$(echo "$input" | jq -r '.vcs.dirty // false')
+if [[ -z "$branch" && -n "$cwd" && -d "$cwd" ]]; then
+    branch=$(git -C "$cwd" branch --show-current 2>/dev/null)
+fi
 
 git_status=""
 if [[ -n "$branch" && -n "$cwd" && -d "$cwd" ]]; then
+    # Count uncommitted files
+    file_count=$(git -C "$cwd" --no-optional-locks status --porcelain -uall 2>/dev/null | wc -l | tr -d ' ')
+
     # Check sync status with upstream
     sync_status=""
     upstream=$(git -C "$cwd" rev-parse --abbrev-ref @{upstream} 2>/dev/null)
@@ -78,11 +83,14 @@ if [[ -n "$branch" && -n "$cwd" && -d "$cwd" ]]; then
         sync_status="no upstream"
     fi
 
-    # Build git status string using vcs.dirty from JSON
-    if [[ "$dirty" == "true" ]]; then
-        git_status="(dirty, ${sync_status})"
+    # Build git status string
+    if [[ "$file_count" -eq 0 ]]; then
+        git_status="(0 files uncommitted, ${sync_status})"
+    elif [[ "$file_count" -eq 1 ]]; then
+        single_file=$(git -C "$cwd" --no-optional-locks status --porcelain -uall 2>/dev/null | head -1 | sed 's/^...//')
+        git_status="(${single_file} uncommitted, ${sync_status})"
     else
-        git_status="(clean, ${sync_status})"
+        git_status="(${file_count} files uncommitted, ${sync_status})"
     fi
 fi
 

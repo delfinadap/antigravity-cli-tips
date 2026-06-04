@@ -4,6 +4,12 @@ This file is `AGENTS.md`. `CLAUDE.md` is symlinked to this file.
 
 - Writing: keep user's voice, conversational, stick closely to what user said without making things up, but fix small grammar mistakes. Don't embellish or add sentences the user didn't say. Rephrasing and light cleanup is fine, but the content should come from the user.
 
+## Project structure
+
+- `README.md` - Tips content
+- `scripts/context-bar.sh` - Status line script for Antigravity CLI. Symlinked from `~/.gemini/antigravity-cli/statusline.sh` so edits here take effect immediately.
+- `scripts/color-preview.sh` - Preview color themes for the status line script
+
 ## Filing issues on the official repo
 
 File issues on `google-antigravity/antigravity-cli` using host `gh` (not through a container).
