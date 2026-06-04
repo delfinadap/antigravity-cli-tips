@@ -126,33 +126,43 @@ ctx="${bar} ${C_GRAY}${pct}% of ${max_display} tokens"
 # Get terminal width from JSON
 term_width=$(echo "$input" | jq -r '.terminal_width // 120')
 
-# Build output: Model | Dir | Branch (status) | Context
-output="${C_ACCENT}${model}${C_GRAY} | 📁${dir}"
-[[ -n "$branch" ]] && output+=" | 🔀${branch} ${git_status}"
-output+=" | ${ctx}${C_RESET}"
+# Build segments: each has a colored version and a plain version for measuring
+seg_colored=()
+seg_plain=()
 
-# Expand ANSI codes, then wrap at terminal width
-expanded=$(printf '%b' "$output")
-col=0
-in_esc=0
-result=""
-for (( i=0; i<${#expanded}; i++ )); do
-    c="${expanded:i:1}"
-    if (( in_esc )); then
-        result+="$c"
-        [[ "$c" == [a-zA-Z] ]] && in_esc=0
-    elif [[ "$c" == $'\033' ]]; then
-        result+="$c"
-        in_esc=1
+seg_colored+=("${C_ACCENT}${model}${C_GRAY}")
+seg_plain+=("${model}")
+
+seg_colored+=(" | 📁${dir}")
+seg_plain+=(" | 📁${dir}")
+
+if [[ -n "$branch" ]]; then
+    seg_colored+=(" | 🔀${branch} ${git_status}")
+    seg_plain+=(" | 🔀${branch} ${git_status}")
+fi
+
+seg_colored+=(" | ${ctx}${C_RESET}")
+seg_plain+=(" | xxxxxxxxxx ${pct}% of ${max_display} tokens")
+
+# Build lines, wrapping at word boundaries when a segment won't fit
+line=""
+line_len=0
+first=1
+for (( s=0; s<${#seg_colored[@]}; s++ )); do
+    p="${seg_plain[$s]}"
+    # Account for double-width emojis
+    p_len=${#p}
+    [[ "$p" == *📁* ]] && (( p_len++ ))
+    [[ "$p" == *🔀* ]] && (( p_len++ ))
+
+    if (( first || line_len + p_len <= term_width )); then
+        line+="${seg_colored[$s]}"
+        (( line_len += p_len ))
+        first=0
     else
-        if (( col >= term_width )); then
-            result+=$'\n'
-            col=0
-        fi
-        result+="$c"
-        (( col++ ))
-        # Emojis are 2 columns wide in the terminal
-        case "$c" in 📁|🔀|💬) (( col++ )) ;; esac
+        printf '%b\n' "$line"
+        line="${seg_colored[$s]}"
+        line_len=$p_len
     fi
 done
-printf '%s\n' "$result"
+printf '%b\n' "$line"
