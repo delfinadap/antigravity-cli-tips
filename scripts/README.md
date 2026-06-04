@@ -1,37 +1,36 @@
-# Claude Code Scripts
+# Antigravity CLI Scripts
 
 ## context-bar.sh
 
-A two-line status line script for Claude Code that shows model, directory, git branch, uncommitted file count, sync status with origin, context usage, and your last message.
+A status line script for Antigravity CLI that shows model, directory, git branch, dirty status, sync status with origin, and context usage.
 
 **Example output:**
 ```
-Opus 4.5 | 📁claude-code-tips | 🔀main (scripts/context-bar.sh uncommitted, synced 12m ago) | ██░░░░░░░░ 18% of 200k tokens
-💬 This is good. I don't think we need to change the documentation as long as we don't say that the default color is orange el...
+Gemini | 📁my-project | 🔀main (clean, synced 12m ago) | ██░░░░░░░░ 8% of 1M tokens
 ```
 
 ### Installation
 
-1. Copy the script to your Claude scripts directory:
+1. Copy the script to your Antigravity CLI scripts directory:
    ```bash
-   mkdir -p ~/.claude/scripts
-   cp context-bar.sh ~/.claude/scripts/
-   chmod +x ~/.claude/scripts/context-bar.sh
+   mkdir -p ~/.gemini/antigravity-cli
+   cp context-bar.sh ~/.gemini/antigravity-cli/statusline.sh
+   chmod +x ~/.gemini/antigravity-cli/statusline.sh
    ```
 
-2. Update your `~/.claude/settings.json`:
+2. Update your `~/.gemini/antigravity-cli/settings.json`:
    ```json
    {
      "statusLine": {
        "type": "command",
-       "command": "~/.claude/scripts/context-bar.sh"
+       "command": "~/.gemini/antigravity-cli/statusline.sh"
      }
    }
    ```
 
 That's it!
 
-### Color Themes
+### Color themes
 
 The script supports optional color themes for the model name and progress bar. Edit the `COLOR` variable at the top of the script:
 
@@ -40,25 +39,22 @@ The script supports optional color themes for the model name and progress bar. E
 COLOR="orange"
 ```
 
-Preview all options by running `bash scripts/color-preview.sh`:
-
-![Color preview options](color-preview.png)
+Preview all options by running `bash scripts/color-preview.sh`.
 
 ### Requirements
 
 - `jq` (for JSON parsing)
 - `bash`
-- `git` (optional, for branch display)
-- Claude Code 2.0.65+ (verified to work; older versions may not have the required JSON fields - check earlier commits for older versions)
+- `git` (optional, for sync status)
 
 ### How it works
 
-Claude Code passes session metadata to status line commands via stdin as JSON, including:
+Antigravity CLI passes session metadata to status line commands via stdin as JSON, including:
 - `model.display_name` - The model name
 - `cwd` - Current working directory
-- `context_window.total_input_tokens` - Total input tokens used
-- `context_window.total_output_tokens` - Total output tokens used
+- `vcs.branch` - Current git branch
+- `vcs.dirty` - Whether there are uncommitted changes
+- `context_window.used_percentage` - Percentage of context window used
 - `context_window.context_window_size` - Maximum context window size
-- `transcript_path` - Path to the session transcript JSONL file
 
-The script uses these JSON fields to calculate context usage (input + output tokens), showing percentage of the context window. Use `/context` for precise token breakdown.
+See the [official status line docs](https://antigravity.google/docs/cli-statusline) for the full list of available JSON fields.
