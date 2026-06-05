@@ -68,6 +68,8 @@ If you also use Claude Code, you can symlink `CLAUDE.md` to point to the same fi
 ln -s AGENTS.md CLAUDE.md
 ```
 
+You can also set up a global `AGENTS.md` at `~/.gemini/AGENTS.md` for instructions that apply across all projects.
+
 ## Tip 3: Talk to Antigravity CLI with your voice
 
 I found that you can communicate much faster with your voice than typing with your hands. Using a voice transcription system on your local machine is really helpful for this.

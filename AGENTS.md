@@ -8,6 +8,7 @@ This file is `AGENTS.md`. `CLAUDE.md` is symlinked to this file.
 ## Project structure
 
 - `README.md` - Tips content
+- `GLOBAL-AGENTS.md` - Global AGENTS.md for all projects. Symlinked from `~/.gemini/AGENTS.md`.
 - `scripts/context-bar.sh` - Status line script for Antigravity CLI. Symlinked from `~/.gemini/antigravity-cli/statusline.sh` so edits here take effect immediately.
 - `scripts/color-preview.sh` - Preview color themes for the status line script
 
