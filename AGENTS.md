@@ -12,6 +12,10 @@ This file is `AGENTS.md`. `CLAUDE.md` is symlinked to this file.
 - `scripts/context-bar.sh` - Status line script for Antigravity CLI. Symlinked from `~/.gemini/antigravity-cli/statusline.sh` so edits here take effect immediately.
 - `scripts/color-preview.sh` - Preview color themes for the status line script
 
+## Official documentation
+
+The official Antigravity CLI documentation is at `https://antigravity.google/docs/`. Use Playwright to browse it when researching features or verifying claims.
+
 ## Filing issues on the official repo
 
 File issues on `google-antigravity/antigravity-cli` using host `gh` (not through a container).

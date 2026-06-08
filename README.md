@@ -123,3 +123,21 @@ For example, you might have a section like this in your `AGENTS.md`:
 ```
 
 Then you can just ask "what do we have for the to-do list" and it'll give you a summary of what's done and what's next.
+
+## Tip 9: Pre-allow directories outside your project
+
+By default, Antigravity CLI auto-allows reading and writing files inside your current project directory. But if you ask it to access files in a different directory, it'll prompt you for permission every time.
+
+You can fix this by adding those directories to the `allow` list in your `~/.gemini/antigravity-cli/settings.json` (see the [official docs](https://antigravity.google/docs/cli-permissions)):
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "read_file(/Users/yk/Desktop/projects/massive-coop-roguelike)"
+    ]
+  }
+}
+```
+
+Path matching is recursive, so allowing a directory covers all files and folders inside it. If you also want write access, add `write_file` too - and `write_file` implies `read_file`, so you don't need both for the same path.
