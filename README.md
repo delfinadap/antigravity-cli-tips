@@ -141,3 +141,13 @@ You can fix this by adding those directories to the `allow` list in your `~/.gem
 ```
 
 Path matching is recursive, so allowing a directory covers all files and folders inside it. If you also want write access, add `write_file` too - and `write_file` implies `read_file`, so you don't need both for the same path.
+
+## Tip 10: Use realpath to point it at files in a different location
+
+When you want to tell Antigravity CLI about files in a different folder, use `realpath` to get the full absolute path:
+
+```bash
+realpath some/relative/path
+```
+
+Then paste that absolute path into your prompt so it knows exactly where to look.
