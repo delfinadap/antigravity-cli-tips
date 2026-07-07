@@ -163,5 +163,5 @@ This auto-approves all tool permission requests without prompting.
 For convenience, you can even add an alias like in [Tip 0](#tip-0-set-up-terminal-aliases-for-quick-access):
 
 ```bash
-alias as='agy --dangerously-skip-permissions'
+alias ad='agy --dangerously-skip-permissions'
 ```
