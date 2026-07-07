@@ -152,6 +152,18 @@ You can fix this by adding those directories to the `allow` list in your `~/.gem
 
 Path matching is recursive, so allowing a directory covers all files and folders inside it. If you also want write access, add `write_file` too - and `write_file` implies `read_file`, so you don't need both for the same path.
 
+This also comes up when the agent edits its own config. For example, setting up an MCP server writes to `~/.gemini/config/mcp_config.json`, which is outside your workspace, so it triggers a permission prompt. You can pre-allow it the same way:
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "write_file(/Users/yk/.gemini/config/mcp_config.json)"
+    ]
+  }
+}
+```
+
 ## Tip 11: Use realpath to point it at files in a different location
 
 When you want to tell Antigravity CLI about files in a different folder, use `realpath` to get the full absolute path:
