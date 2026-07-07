@@ -149,3 +149,19 @@ realpath some/relative/path
 ```
 
 Then paste that absolute path into your prompt so it knows exactly where to look.
+
+## Tip 11: Skip permissions in isolated environments
+
+If you're working in an isolated environment - like a container, a VM, or a dedicated test machine - where you're okay with the agent doing anything without asking, you can launch Antigravity CLI with:
+
+```bash
+agy --dangerously-skip-permissions
+```
+
+This auto-approves all tool permission requests without prompting.
+
+For convenience, you can even add an alias like in [Tip 0](#tip-0-set-up-terminal-aliases-for-quick-access):
+
+```bash
+alias as='agy --dangerously-skip-permissions'
+```
