@@ -99,6 +99,24 @@ A common objection is "what if you're in a room with other people?" In that case
 
 One way to verify its output if it's code is to have it write tests and make sure the tests look good and don't just hardcode true. That's one way, but you can of course check the code it generates as it goes. You can also use a visual Git client like GitHub Desktop for checking changes quickly. And having it generate a PR is a great way as well - have it create a draft PR, check the content before marking it as ready for review.
 
+In addition, you can set up different ways for the agent to test your code in different formats. For example, if you're building a web app, you can set up Playwright MCP and it'll be able to use the browser to test your app all on its own. To set it up, add this to `~/.gemini/config/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp"
+      ]
+    }
+  }
+}
+```
+
+With this, the agent gets browser automation tools like `browser_navigate`, `browser_click`, and `browser_take_screenshot`, so it can open your app, interact with it, and visually check the result on its own.
+
 ## Tip 6: Learn to use various CLI tools from the agent
 
 For example, you can create a draft PR through the `gh` command, and once it's created, you can ask the agent to open it in your browser with the `open` command so you can review it yourself. If you have a change you want to check quickly or fix manually, you can use the `code` command to open it in VS Code, or use the `github` command to open GitHub Desktop and see a visual diff. You can use `ffmpeg` for quick video editing, or ImageMagick for quick image editing and conversion. There are a lot of things you can do if you're familiar with these CLI tools.
