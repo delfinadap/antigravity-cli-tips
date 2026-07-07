@@ -189,3 +189,10 @@ For convenience, you can even add an alias like in [Tip 0](#tip-0-set-up-termina
 ```bash
 alias ad='agy --dangerously-skip-permissions'
 ```
+
+## Tip 13: Continue from a previous conversation
+
+Two ways to pick up where you left off:
+
+- `agy -c` (or `--continue`) continues the most recent conversation
+- `/resume` inside a session opens an interactive picker of your past conversations
