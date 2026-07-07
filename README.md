@@ -162,7 +162,7 @@ realpath some/relative/path
 
 Then paste that absolute path into your prompt so it knows exactly where to look.
 
-## Tip 11: Skip permissions in isolated environments
+## Tip 12: Skip permissions in isolated environments
 
 If you're working in an isolated environment - like a container, a VM, or a dedicated test machine - where you're okay with the agent doing anything without asking, you can launch Antigravity CLI with:
 
