@@ -85,6 +85,8 @@ Antigravity fetches the information from GitHub (or wherever you host your code)
 
 > I don't quite understand this part. Can you explain this line by line?
 
+Then I copy and paste the relevant parts of the codebase.
+
 There's a question about craft here: how much of the code do you need to understand? How much do you want to understand? To me, this is the answer. You don't necessarily have to understand everything manually, but you have to know there's always an option to dig in with however much depth you need, line by line if necessary. Tools like Antigravity are helpful for speeding up the process. It doesn't mean you lose control of your code. On the contrary, I think you gain more control by being able to dig into any part of the codebase more easily.
 
 ## Wrapping up
