@@ -39,7 +39,7 @@ This is a process I use a lot: going back and forth with the agent to dig into c
 
 ## Step 2: Designing the solution
 
-Back to the GitFut example (I'm not associated with the project in any way, just a fan). When I looked at my own card, I noticed I have this score and these stats, but I wondered: how good is it really? What does this number actually mean? It would be convenient to see a distribution of GitHub users and where you rank in relation to them. So I decided to implement this feature and [sent a PR](https://github.com/Younesfdj/gitfut/pull/37). The idea is to add a new distribution tab, so you can see whether you're in the top X% of GitHub users or top X% of active devs.
+Back to the GitFut example (I'm not associated with the project in any way, just a fan). When I looked at my own card, I noticed I have this score and these stats, but I wondered: how good is it really? What does this number actually mean? It would be convenient to see a distribution of GitHub users and where you rank in relation to them. So I decided to implement this feature and [sent a PR](https://github.com/Younesfdj/gitfut/pull/37). The idea is to add a new distribution tab, so you can see that you're in the top X% of all GitHub users and the top X% of active devs.
 
 ![The distribution section on my GitFut card](sdlc-gitfut-distribution.png)
 
