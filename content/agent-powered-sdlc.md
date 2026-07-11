@@ -59,7 +59,7 @@ At this point, I've identified the problem and designed a solution, so I can sta
 
 > I'm working on this repository. It is a fork, so make sure to stay on this fork. I'm not sure if it's cloned yet. If not, you can clone it. If it's already cloned, pull the latest version and switch to the main or master branch.
 
-I keep all my Antigravity projects in a single projects folder, so Antigravity knows where to look for them. Then I describe the issue:
+I keep all my Antigravity projects in a single projects folder, so it knows where to look for them. Then I describe the issue:
 
 > I'm working on this issue. The way I want to work on it is I want it to be like the country selector. If you look at the country selector, you can hover over it on anyone's card, select a country, and that's stored in the URL parameter. Can we do the same thing for the name? For the name within the card, maybe there's an overlay element I can hover over and edit the name to whatever I want, so that it's also stored in the URL parameter.
 
