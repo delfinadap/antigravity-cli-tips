@@ -1,6 +1,6 @@
 # How to agentify your entire software development lifecycle
 
-*This is a blog post version of [my video on the same topic](https://youtu.be/K3YYr6yauAw). The slides are available [here](https://ykdojo.github.io/antigravity-cli-tips/content/sdlc-slides.html).*
+*This is an adapted version of [this video](https://youtu.be/K3YYr6yauAw) on the Google Cloud Tech YouTube channel. The slides are available [here](https://ykdojo.github.io/antigravity-cli-tips/content/sdlc-slides.html).*
 
 I wanted to start with a common complaint about agentic coding: people write a lot of features with it, but then they write a lot of bugs, too. More code tends to naturally lead to more tech debt. In my opinion, part of the reason we have these problems is that we tend to over-rely on these agents to generate code, but not enough for maintaining it, reviewing it, or testing it.
 
