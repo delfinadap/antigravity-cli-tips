@@ -1,4 +1,4 @@
-# How to agentify your entire software development lifecycle
+# Agentifying your entire software development lifecycle
 
 *This is an adapted version of [this video](https://youtu.be/K3YYr6yauAw) on the Google Cloud Tech YouTube channel. The slides are available [here](https://ykdojo.github.io/antigravity-cli-tips/content/sdlc-slides.html).*
 
