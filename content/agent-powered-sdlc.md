@@ -19,11 +19,11 @@ I have two example issues to cover here.
 
 The first one is simple enough that it doesn't have to be agentified, but it'll be important later. For context: if you go to gitfut.com/yourusername, you get a card with a score for your GitHub contributions and stats like commits and stars earned, similar to a football (soccer) trading card. The nice thing about it is that it's open source. I was looking through it and found an issue, which I [copied to my own fork](https://github.com/ykdojo/gitfut/issues/1) so I could work on it there. The problem this person had was that his last name is "De Ruwe" in two words, but his player card was only showing "Ruwe". It's short enough to just read yourself; we'll come back to it in step 3.
 
-![My GitFut card page](sdlc-gitfut-card.png)
+![My GitFut card page](agent-powered-sdlc/gitfut-card.png)
 
 The second example is [an issue on Daft](https://github.com/Eventual-Inc/Daft/issues/6296), an open source data processing library I've been part of for a while. This one is fairly complex, and there's an attached discussion that's also complex on its own.
 
-![The Daft issue about supporting the LeRobot format](sdlc-daft-issue.png)
+![The Daft issue about supporting the LeRobot format](agent-powered-sdlc/daft-issue.png)
 
 I could read it sentence by sentence myself, but a faster way to handle this part of the process is to hand it to a tool like Antigravity:
 
@@ -41,7 +41,7 @@ This is a process I use a lot: going back and forth with the agent to dig into c
 
 Back to the GitFut example (I'm not associated with the project in any way, just a fan). When I looked at my own card, I wondered: how good is this score really? What does the number actually mean? It would be convenient to see a distribution of GitHub users and where you rank in relation to them. So I decided to implement this feature and [sent a PR](https://github.com/Younesfdj/gitfut/pull/37). The idea is to add a new distribution tab, so you can see that you're in the top X% of all GitHub users and the top X% of active devs.
 
-![The distribution section on my GitFut card](sdlc-gitfut-distribution.png)
+![The distribution section on my GitFut card](agent-powered-sdlc/gitfut-distribution.png)
 
 This required designing a couple of things. The visual look was relatively trivial compared to the system side: how do you gather this data in a privacy-friendly way? How do you store it? How do you show it?
 
@@ -75,7 +75,7 @@ The end result: there's now an edit option on the card itself, and the custom na
 
 For this step, I have [the complete version of the PR](https://github.com/ykdojo/gitfut/pull/2) I was just working on. The title and description were all generated agentically, and there are quite a few changed files.
 
-![The PR with the card name picker changes](sdlc-gitfut-pr.png)
+![The PR with the card name picker changes](agent-powered-sdlc/gitfut-pr.png)
 
 Suppose someone else on my team created this PR, or I created it and forgot about it a little bit, and I want to review it before sending it out. You could review everything manually, but I've found an interactive way of reviewing to be pretty effective:
 
