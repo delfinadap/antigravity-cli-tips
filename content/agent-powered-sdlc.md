@@ -17,7 +17,7 @@ This doesn't cover all of SDLC, but it should be sufficient for this discussion.
 
 I have two example issues to cover here.
 
-The first one is simple enough that it doesn't have to be agentified, but it'll be important later. For context: if you go to gitfut.com/yourusername, you get a website that gives you a score for your GitHub contributions, with stats like commits and stars earned, similar to a football (soccer) trading card. The nice thing about it is that it's open source. I was looking through it and found an issue, which I [copied to my own fork](https://github.com/ykdojo/gitfut/issues/1) so I could work on it there. The problem this person had was that his last name is "De Ruwe" in two words, but his player card was only showing "Ruwe". This issue is short enough that I can just read it myself, but we'll come back to it later.
+The first one is simple enough that it doesn't have to be agentified, but it'll be important later. For context: if you go to gitfut.com/yourusername, you get a card with a score for your GitHub contributions and stats like commits and stars earned, similar to a football (soccer) trading card. The nice thing about it is that it's open source. I was looking through it and found an issue, which I [copied to my own fork](https://github.com/ykdojo/gitfut/issues/1) so I could work on it there. The problem this person had was that his last name is "De Ruwe" in two words, but his player card was only showing "Ruwe". It's short enough to just read yourself; we'll come back to it in step 3.
 
 ![My GitFut card page](sdlc-gitfut-card.png)
 
@@ -39,7 +39,7 @@ This is a process I use a lot: going back and forth with the agent to dig into c
 
 ## Step 2: Designing the solution
 
-Back to the GitFut example (I'm not associated with the project in any way, just a fan). When I looked at my own card, I noticed I have this score and these stats, but I wondered: how good is it really? What does this number actually mean? It would be convenient to see a distribution of GitHub users and where you rank in relation to them. So I decided to implement this feature and [sent a PR](https://github.com/Younesfdj/gitfut/pull/37). The idea is to add a new distribution tab, so you can see that you're in the top X% of all GitHub users and the top X% of active devs.
+Back to the GitFut example (I'm not associated with the project in any way, just a fan). When I looked at my own card, I wondered: how good is this score really? What does the number actually mean? It would be convenient to see a distribution of GitHub users and where you rank in relation to them. So I decided to implement this feature and [sent a PR](https://github.com/Younesfdj/gitfut/pull/37). The idea is to add a new distribution tab, so you can see that you're in the top X% of all GitHub users and the top X% of active devs.
 
 ![The distribution section on my GitFut card](sdlc-gitfut-distribution.png)
 
@@ -51,9 +51,9 @@ For that, I had a long conversation with a coding agent, asking questions like: 
 
 Now let's go back to the name issue from step 1 and implement a fix.
 
-The person who submitted the issue has a name with three parts, and his last name is the last two parts ("De Ruwe"). But the app thought his last name was just the last part. On the original project, it looks like they fixed it by automatically detecting that the last two names might be the last name. But that's not always the case. For example, I have a middle name. If I had my full name on my account, it would be first name, middle name, last name. If you assume the last two names are the last name, that would be wrong.
+To recap: this person's last name is "De Ruwe" in two words, but the card only showed "Ruwe", because the app assumed the last word of your full name is your last name. The original project ended up fixing this by treating the last two words as the last name instead. But that heuristic isn't always right either. I have a middle name, for example, so if I had my full name on my GitHub account, the card would incorrectly show my middle name as part of my last name.
 
-The way I would solve it is different: make it customizable. The issue itself actually mentioned this approach. The person said it might not be easy since GitHub only has a setting for full name, but maybe the user could change the appearance of their name on the card, like they can pick a country. There's already a way to pick your country on your card, and it's stored as a URL parameter: if I pick Canada, the URL says country=CA. If I go to a new page, it's stored. If I remove it, it's removed. So the suggestion is to make the name customizable the same way, which I think is a reasonable approach.
+I would solve it differently: instead of guessing, make the name customizable. The issue reporter actually suggested this approach himself. GitHub only has a single setting for your full name, so let the user change how their name appears on the card, the same way they can already pick a country. The country selector works through a URL parameter: if I pick Canada on my card, the URL gets `?country=CA`, and anyone opening that URL sees the card with a Canadian flag. Remove the parameter and the flag is gone. The name can work exactly the same way, which I think is a reasonable approach.
 
 At this point, I've identified the problem and designed a solution, so I can start implementing. I take the URL of the repo I'm working on (in this case my fork, so I don't affect the original project) and prompt something like:
 
@@ -63,13 +63,13 @@ I keep all my Antigravity projects in a single projects folder, so Antigravity k
 
 > I'm working on this issue. The way I want to work on it is I want it to be like the country selector. If you look at the country selector, you can hover over it on anyone's card, select a country, and that's stored in the URL parameter. Can we do the same thing for the name? For the name within the card, maybe there's an overlay element I can hover over and edit the name to whatever I want, so that it's also stored in the URL parameter.
 
-That's the kind of prompt I would use for this task. One small tip from the demo: I didn't remember the command for running the project locally, so I just asked Antigravity:
+That's the kind of prompt I would use for this task. One small tip: I didn't remember the command for running the project locally, so I just asked Antigravity:
 
 > I've been working on this project, but I forgot how to run it. Was it npm run dev? Remind me, and actually run it for me so I can check it.
 
 It looked at package.json, confirmed the command, and ran it for me.
 
-The end result: on the card, there's now a way to edit the name, and if the person from the issue wants to use his full name, he can do it that way, stored in the URL parameter. To me, this is the most flexible and comprehensive solution, instead of trying to be smart about which part is the last name exactly. Maybe I just want to use my first name only, or my nickname.
+The end result: there's now an edit option on the card itself, and the custom name is stored in a URL parameter, just like the country. If the person from the issue wants his full last name to show up, he can simply set it. To me, this is the most flexible and comprehensive solution, instead of trying to be smart about which part is the last name exactly. Maybe I just want to use my first name only, or my nickname.
 
 ## Step 4: Reviewing and testing
 
@@ -81,7 +81,7 @@ Suppose someone else on my team created this PR, or I created it and forgot abou
 
 > I have this PR that I want to review. I see that there are a lot of files that changed. Can you summarize each one for me so I can review them one by one? Keep each summary to one or two sentences so that it's easy to review.
 
-It fetches the information from GitHub (or wherever you host your code) directly and summarizes each file. Then I go through them one by one. If a summary is good enough and the change makes sense, I mark that file as viewed. If something surprises me, like a sharing utility file that changed for reasons I don't quite understand when I look at it manually, I can say:
+Antigravity fetches the information from GitHub (or wherever you host your code) directly and summarizes each file. Then I go through them one by one. If a summary is good enough and the change makes sense, I mark that file as viewed. If something surprises me, like a sharing utility file that changed for reasons I don't quite understand when I look at it manually, I can say:
 
 > I don't quite understand this part. Can you explain this line by line?
 
