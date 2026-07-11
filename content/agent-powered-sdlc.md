@@ -1,4 +1,4 @@
-# How I automate my entire SDLC with Google Antigravity
+# How to agentify your entire software development lifecycle
 
 *This is a blog post version of [my video on the same topic](https://youtu.be/K3YYr6yauAw). The slides are available [here](https://ykdojo.github.io/antigravity-cli-tips/content/sdlc-slides.html).*
 
