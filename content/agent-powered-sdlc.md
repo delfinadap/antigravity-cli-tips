@@ -73,7 +73,7 @@ The end result: there's now an edit option on the card itself, and the custom na
 
 ## Step 4: Reviewing and testing
 
-For this step, I have [the complete version of the PR](https://github.com/ykdojo/gitfut/pull/2) I was just working on. The title and description were all generated through Antigravity, and there are quite a few changed files.
+For this step, I have [the complete version of the PR](https://github.com/ykdojo/gitfut/pull/2) I was just working on. The title and description were all generated agentically, and there are quite a few changed files.
 
 ![The PR with the card name picker changes](sdlc-gitfut-pr.png)
 
