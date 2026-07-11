@@ -17,7 +17,7 @@ This doesn't cover all of SDLC, but it should be sufficient for this discussion.
 
 I have two example issues to cover here.
 
-The first one is simple enough that it doesn't really need help to understand, but it'll be important later. For context: if you go to gitfut.com/yourusername, you get a website that gives you a score for your GitHub contributions, with stats like commits and stars earned, similar to a football (soccer) trading card. The nice thing about it is that it's open source. I was looking through it and found an issue, which I [copied to my own fork](https://github.com/ykdojo/gitfut/issues/1) so I could work on it there. The problem this person had was that his last name is "De Ruwe" in two words, but his player card was only showing "Ruwe". This issue is short enough that I can just read it myself, but we'll come back to it later.
+The first one is simple enough that it doesn't have to be agentified, but it'll be important later. For context: if you go to gitfut.com/yourusername, you get a website that gives you a score for your GitHub contributions, with stats like commits and stars earned, similar to a football (soccer) trading card. The nice thing about it is that it's open source. I was looking through it and found an issue, which I [copied to my own fork](https://github.com/ykdojo/gitfut/issues/1) so I could work on it there. The problem this person had was that his last name is "De Ruwe" in two words, but his player card was only showing "Ruwe". This issue is short enough that I can just read it myself, but we'll come back to it later.
 
 ![My GitFut card page](sdlc-gitfut-card.png)
 
@@ -89,6 +89,6 @@ There's a question about craft here: how much of the code do you need to underst
 
 ## Wrapping up
 
-That's the entire (simplified) SDLC: identify and understand the issue, design a solution, implement it, and review and test it, with agents helping at every step.
+That's the entire (simplified) SDLC, agentified: identify and understand the issue, design a solution, implement it, and review and test it, with agents helping at every step.
 
 If you want more tips like this, check out the rest of [this repo](../README.md), and you can watch the full video version of this post [here](https://youtu.be/K3YYr6yauAw).
