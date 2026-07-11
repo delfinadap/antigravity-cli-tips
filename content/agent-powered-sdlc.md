@@ -91,6 +91,6 @@ There's a question about craft here: how much of the code do you need to underst
 
 ## Wrapping up
 
-That's the entire (simplified) SDLC, agentified: identify and understand the issue, design a solution, implement it, and review and test it, with agents helping at every step.
+That's the entire (simplified) SDLC, agentified.
 
 If you want more tips like this, check out the rest of [this repo](../README.md), and you can watch the full video version of this post [here](https://youtu.be/K3YYr6yauAw).
