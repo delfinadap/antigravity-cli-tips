@@ -214,3 +214,10 @@ Two ways to pick up where you left off:
 
 - `agy -c` (or `--continue`) continues the most recent conversation
 - `/resume` inside a session opens an interactive picker of your past conversations
+## Tip 14: Agentify your entire SDLC
+
+It's common to over-rely on agents like Antigravity to generate code, but it's just as important to use them for the other parts of the software development lifecycle: understanding issues, designing solutions, reviewing PRs, and testing.
+
+I made a video about this for the Google Cloud Tech YouTube channel, and there's also a [blog post version](content/agent-powered-sdlc.md) in this repo:
+
+[![Agentify SDLC with Antigravity (video)](content/agent-powered-sdlc/video-frame.jpg)](https://youtu.be/K3YYr6yauAw)
